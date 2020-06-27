@@ -33,7 +33,9 @@ const Header = ({ variant }) => {
       <Container>
         <Toolbar>
           <Logo src={ImageLogo} alt="logo" />
-          <Typography variant="h6">Fast Shopping App</Typography>
+          <Typography variant="h6" component="h1">
+            Fast Shopping App
+          </Typography>
           {variant === "home" && (
             <ToolbarIcon color="inherit" component={Link} to="/shopping-cart">
               <Badge badgeContent={shoppingCartItems} color="error">

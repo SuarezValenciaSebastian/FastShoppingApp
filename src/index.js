@@ -1,21 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/lib/integration/react";
 import { SnackbarProvider } from "notistack";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import configureStore from "./redux/store";
 
-const store = configureStore();
+const { store, persistor } = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <SnackbarProvider>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </SnackbarProvider>
+    <PersistGate persistor={persistor}>
+      <SnackbarProvider>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </SnackbarProvider>
+    </PersistGate>
   </Provider>,
   document.getElementById("root")
 );

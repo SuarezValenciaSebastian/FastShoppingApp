@@ -1,5 +1,5 @@
-import component from "./ShoppingCart";
+import container from "./ShoppingCart";
 import reducer from "./redux/reducer";
 
 export { reducer };
-export default component;
+export default container;

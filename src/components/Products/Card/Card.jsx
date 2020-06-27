@@ -31,7 +31,7 @@ const CardContent = styled.div`
   height: 100%;
 `;
 
-const ProductCard = ({ product }) => {
+const Card = ({ product }) => {
   return (
     <Paper>
       <Grid container wrap="nowrap" spacing={3}>
@@ -63,7 +63,7 @@ const ProductCard = ({ product }) => {
   );
 };
 
-ProductCard.propTypes = {
+Card.propTypes = {
   product: PropTypes.shape({
     image: PropTypes.string,
     name: PropTypes.string.isRequired,
@@ -72,4 +72,4 @@ ProductCard.propTypes = {
   }),
 };
 
-export default ProductCard;
+export default Card;

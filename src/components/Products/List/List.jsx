@@ -2,7 +2,7 @@ import React from "react";
 import _ from "lodash";
 import { useSelector } from "react-redux";
 import Grid from "@material-ui/core/Grid";
-import ProductCard from "../ProductCard";
+import ProductCard from "../Card";
 
 const List = () => {
   const products = useSelector((state) => state.products.list);
