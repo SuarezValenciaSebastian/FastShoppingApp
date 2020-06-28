@@ -9,6 +9,7 @@ const CheckoutButton = () => {
       variant="contained"
       component={Link}
       to="/checkout"
+      fullWidth
     >
       Checkout
     </Button>

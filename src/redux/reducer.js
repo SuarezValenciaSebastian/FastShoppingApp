@@ -4,9 +4,10 @@ import storage from "redux-persist/lib/storage";
 
 import { reducer as productsReducer } from "../pages/Products";
 import { reducer as shoppingCartReducer } from "../pages/ShoppingCart";
+import { reducer as checkoutReducer } from "../pages/Checkout";
 
 const persistConfig = {
-  key: "roor",
+  key: "root",
   storage,
   whitelist: ["shoppingCart"],
 };
@@ -14,6 +15,7 @@ const persistConfig = {
 const reducer = combineReducers({
   products: productsReducer,
   shoppingCart: shoppingCartReducer,
+  checkout: checkoutReducer,
 });
 
 export default persistReducer(persistConfig, reducer);

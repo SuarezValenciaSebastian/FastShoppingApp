@@ -8,11 +8,11 @@ import MuiLink from "@material-ui/core/Link";
 import styled from "styled-components";
 import Header from "../../components/shared/Header";
 import CartList from "../../components/ShoppingCart/List";
-import CartTotal from "../../components/ShoppingCart/Total";
+import CartTotal from "../../components/shared/Total";
 import CheckoutButton from "../../components/ShoppingCart/CheckoutButton";
 
 const Container = styled(MuiContainer)`
-  padding: 1.6rem 0;
+  padding: 1rem 0;
 `;
 
 const ShoppingCart = () => {
