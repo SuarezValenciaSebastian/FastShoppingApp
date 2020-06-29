@@ -8,6 +8,7 @@ import Header from "../../components/shared/Header";
 import CheckoutCustomerInformation from "../../components/Checkout/CustomerInformation";
 import CheckoutOrderSummary from "../../components/Checkout/OrderSummary";
 import CartTotal from "../../components/shared/Total";
+import useAxios from "../../utils/hooks/useAxios";
 
 const validateCustomer = (customer) => {
   return !(
@@ -20,7 +21,14 @@ const validateCustomer = (customer) => {
 };
 
 const Checkout = () => {
+  const [, placeOrder] = useAxios("post", "/orders");
+
   const customer = useSelector((state) => state.checkout);
+  const cart = useSelector((state) => state.shoppingCart);
+
+  const handleOrderPlace = async () => {
+    await placeOrder({ customer, order: cart.list });
+  };
 
   return (
     <>
@@ -40,6 +48,7 @@ const Checkout = () => {
                   variant="contained"
                   fullWidth
                   disabled={validateCustomer(customer)}
+                  onClick={handleOrderPlace}
                 >
                   Place order
                 </Button>

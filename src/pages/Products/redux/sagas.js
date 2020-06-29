@@ -6,7 +6,7 @@ function* getProducts({ payload }) {
   try {
     const response = yield call(
       axios.get,
-      `http://localhost:3001/api/products?page=${payload}`
+      `/products?page=${payload}`
     );
     yield put(productApiFetchSuccess(response.data));
   } catch (error) {}

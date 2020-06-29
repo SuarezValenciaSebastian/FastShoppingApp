@@ -6,7 +6,7 @@ function* getCustomer({ payload }) {
   try {
     const response = yield call(
       axios.get,
-      `http://localhost:3001/api/customers/by-email/${payload}`
+      `/customers/by-email/${payload}`
     );
     yield put(costumerApiFetchSuccess(response.data));
   } catch (error) {}

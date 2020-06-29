@@ -21,7 +21,7 @@ const initialState = {
 export default (state = initialState, { type, payload }) => {
   switch (type) {
     case CHECKOUT_USER_TYPE__CHANGE:
-      return { ...state, userType: payload };
+      return { ...initialState, userType: payload };
     case CUSTOMER_FETCH_API__SUCCESS:
       return { ...state, ...payload, fetched: true };
     case CUSTOMER_FETCH_API__RESET:
