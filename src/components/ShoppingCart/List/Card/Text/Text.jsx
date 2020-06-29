@@ -4,10 +4,10 @@ import { useDispatch } from "react-redux";
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
-import Typography from "@material-ui/core/Typography";
+import Chip from "@material-ui/core/Chip";
 import { removeItem } from "../../../../../pages/ShoppingCart/redux/actions";
 
-const Text = ({ id }) => {
+const Text = ({ id, name, categories }) => {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
@@ -17,14 +17,22 @@ const Text = ({ id }) => {
   return (
     <>
       <Grid container>
-        <Grid item>Name</Grid>
-        <Grid item>
+        <Grid item xs={11}>
+          {name}
+        </Grid>
+        <Grid item xs={1}>
           <IconButton onClick={handleDelete}>
             <DeleteIcon />
           </IconButton>
         </Grid>
       </Grid>
-      <Typography>Categories</Typography>
+      <Grid container spacing={1}>
+        {categories.map((category) => (
+          <Grid key={`category-${category.id}`} item>
+            <Chip label={category.name} />
+          </Grid>
+        ))}
+      </Grid>
     </>
   );
 };

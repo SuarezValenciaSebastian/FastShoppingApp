@@ -1,5 +1,6 @@
 import axios from "axios";
+import { API_URL } from "../config/default";
 
 export default () => {
-  axios.defaults.baseURL = "http://localhost:3001/api";
+  axios.defaults.baseURL = `${API_URL}/api`;
 };

@@ -7,11 +7,9 @@ import ProductName from "./Name";
 import Categories from "./Categories";
 import ProductDescription from "./Description";
 import ProductFooter from "./Footer";
-import ProductImage from "./71L2iBSyyOL._AC_SX679_.jpg";
+import { API_URL } from "../../../config/default";
 
 const Paper = styled(MuiPaper)`
-  width: 600px;
-  height: 200px;
   padding: 1rem;
 `;
 
@@ -36,7 +34,7 @@ const Card = ({ product }) => {
     <Paper>
       <Grid container wrap="nowrap" spacing={3}>
         <Grid item>
-          <Image src={ProductImage} alt="product" />
+          <Image src={`${API_URL}/images/${product.image}`} alt="product" />
         </Grid>
         <GrownGridItem item>
           <CardContent>
@@ -46,7 +44,7 @@ const Card = ({ product }) => {
                   <ProductName name={product.name} />
                 </Grid>
                 <Grid item>
-                  <Categories />
+                  <Categories categories={product.Categories} />
                 </Grid>
                 <GrownGridItem item>
                   <ProductDescription description={product.description} />

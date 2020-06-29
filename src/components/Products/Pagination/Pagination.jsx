@@ -13,7 +13,11 @@ const Pagination = () => {
   };
 
   return (
-    <MuiPagination count={count / 20} page={page} onChange={handlePageChange} />
+    <MuiPagination
+      count={Math.ceil(count / 20)}
+      page={page}
+      onChange={handlePageChange}
+    />
   );
 };
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -21,6 +22,7 @@ const validateCustomer = (customer) => {
 };
 
 const Checkout = () => {
+  const history = useHistory();
   const [, placeOrder] = useAxios("post", "/orders");
 
   const customer = useSelector((state) => state.checkout);
@@ -28,6 +30,7 @@ const Checkout = () => {
 
   const handleOrderPlace = async () => {
     await placeOrder({ customer, order: cart.list });
+    history.push("/thanks");
   };
 
   return (
