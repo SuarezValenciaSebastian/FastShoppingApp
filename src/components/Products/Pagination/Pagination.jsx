@@ -12,13 +12,13 @@ const Pagination = () => {
     dispatch(startProductApiFetch(value));
   };
 
-  return (
+  return count > 20 ? (
     <MuiPagination
       count={Math.ceil(count / 20)}
       page={page}
       onChange={handlePageChange}
     />
-  );
+  ) : null;
 };
 
 export default Pagination;

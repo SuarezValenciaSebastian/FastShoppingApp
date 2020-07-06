@@ -8,6 +8,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import configureStore from "./redux/store";
 import configureAxios from "./utils/configureAxios";
+import Notifier from "./components/shared/Notifier";
 
 configureAxios();
 const { store, persistor } = configureStore();
@@ -17,6 +18,7 @@ ReactDOM.render(
     <PersistGate persistor={persistor}>
       <SnackbarProvider>
         <React.StrictMode>
+          <Notifier />
           <App />
         </React.StrictMode>
       </SnackbarProvider>
